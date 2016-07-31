@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication.Models.User>
+﻿@model IEnumerable<WebApplication.Models.UserDetailViewModels>
 
 @{
     ViewBag.Title = "Index";
@@ -18,6 +18,9 @@
         <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RolesList)
+        </th>
         <th>Option</th>
     </tr>
 
@@ -28,6 +31,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RolesList)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

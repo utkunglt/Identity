@@ -15,6 +15,7 @@
         <h4>User</h4>
         <hr />
         @Html.ValidationSummary(true)
+        @Html.HiddenFor(x => x.RolesList, new { name = "RolesList" })
         <div class="form-group">
             @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
@@ -47,12 +48,20 @@
                 Select User Role
             </label>
             <div class="col-md-10">
-                @foreach (var item in (SelectList)ViewBag.RoleId)
+                @*//@Html.HiddenFor(m => m.RolesList, new { @name = "RolesList" })*@
+                @foreach (var item in (SelectList) ViewBag.RolesList)
                 {
-                    <input type="checkbox" name="SelectedRoles" value="@item.Value" class="checkbox-inline" />
+                    <input type="radio" name="SelectedRoles" value="@item.Value" class="checkbox-inline" checked="@item.Selected" />
                     @Html.Label(item.Value, new { @class = "control-label" })
+                    //@Html.HiddenFor(o => o.RolesList.)
                 }
+
+                @*@for (int i = 0; i < Model.RolesList.Count(); i++ )
+                {
+                    @Html.HiddenFor(x => x.RolesList[i]);
+                }*@
             </div>
+            
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

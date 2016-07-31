@@ -32,11 +32,12 @@
             @Html.DisplayNameFor(model => model.RolesList)
         </dt>
         <dd>
-            @foreach (var item in ViewBag.RoleNames)
+            @*@foreach (var item in ViewBag.RoleNames)
             {
                 @item
                 @Html.Raw(", ")
-            }
+            }*@
+            @Html.DisplayFor(model => model.RolesList)
          </dd>
     </dl>
 </div>

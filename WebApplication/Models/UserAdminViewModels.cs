@@ -23,7 +23,7 @@ namespace WebApplication.Models
 
 
         [Display(Name = "User Role")]
-        public IEnumerable<SelectListItem> RolesList { get; set; }
+        public string RolesList { get; set; }
 
     }
 
@@ -62,6 +62,8 @@ namespace WebApplication.Models
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Role")]
+        public string Role { get; set; }
 
         [Display(Name = "User Role")]
         public IEnumerable<SelectListItem> RolesList { get; set; }
